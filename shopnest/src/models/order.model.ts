@@ -1,0 +1,113 @@
+import mongoose from "mongoose";
+
+export interface IOrder {
+  _id?: mongoose.Types.ObjectId;
+  user: mongoose.Types.ObjectId;
+  items: [
+    {
+      grocery: mongoose.Types.ObjectId;
+      name: string;
+      price: string;
+      unit: string;
+      image: string;
+      quantity: number;
+    },
+  ]
+  isPaid:boolean,
+  totalAmount: string
+  paymentMethod: "COD" | "online"
+  address: {
+    fullName: string,
+    mobile: string,
+    city: string,
+    state: string,
+    pincode: string,
+    fullAddress: string,
+    latitude: number,
+    longitude: number
+  };
+  
+  assignment?:mongoose.Types.ObjectId
+  assignedDeliveryBoy?:mongoose.Types.ObjectId
+  status: "pending" | "Out Of Delivery" | "Delivered";
+  createdAt: Date;
+  updatedAt: Date;
+  deliveryOtp:string,
+  deliveryOtpVerification:Boolean,
+  deliveredAt:Date
+}
+
+const orderSchema = new mongoose.Schema<IOrder>(
+  {
+    user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    items: [
+      {
+        grocery: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "Grocery",
+          required: true,
+        },
+        name: String,
+        price: String,
+        unit: String,
+        image: String,
+        quantity: Number,
+      },
+    ],
+    isPaid:{
+      type:Boolean,
+      default:false
+    },
+    totalAmount:{
+        type:String,
+        required:true
+    },
+    assignedDeliveryBoy:{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"User"
+    },
+    assignment:{
+       type:mongoose.Schema.Types.ObjectId,
+      ref:"DeliveryAssignment",
+      default: null
+    },
+    paymentMethod:{
+        type:String,
+        enum:["COD","online"],
+        default:"COD"
+    },
+     address: {
+        fullName: String,
+        mobile: String,
+        city: String,
+        state: String,
+        pincode: String,
+        fullAddress: String,
+        latitude: Number,
+        longitude: Number
+  },
+  status: {
+  type: String,
+  enum: ["pending", "Out Of Delivery", "Delivered"],
+  default: "pending",
+  },
+  deliveryOtp: {
+    type: String,
+    default: null
+  },
+  deliveryOtpVerification: {
+      type: Boolean,
+      default: false
+  },
+  deliveredAt: {
+      type: Date
+  }
+ 
+
+  },
+  { timestamps: true },
+);
+
+
+const Order = mongoose.models.Order || mongoose.model("Order",orderSchema)
+export default Order; 
