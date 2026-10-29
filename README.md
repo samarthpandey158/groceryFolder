@@ -376,7 +376,7 @@ Potential improvements for a stronger production-quality portfolio:
 ## 👨‍💻 Author
 
 **Samarth Pandey**  
-B.Tech — Computer Science & Engineering
+
 
 - GitHub: [@samarthpandey158](https://github.com/samarthpandey158)
 - LinkedIn: **Add your LinkedIn profile URL**
