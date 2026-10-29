@@ -283,7 +283,7 @@ Explore the deployed application:
 
 <div align="center">
 
-<a href="https://shopnest-india.vercel.app">
+<a href="https://shopnest-brown.vercel.app">
   <img src="https://img.shields.io/badge/OPEN%20LIVE%20DEMO-16A34A?style=for-the-badge&logo=vercel&logoColor=white" alt="Open ShopNest Live Demo" />
 </a>
 
