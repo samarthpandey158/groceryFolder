@@ -1,14 +1,14 @@
 <div align="center">
 
-# 🛒 ShopNest — Grocery Shopping & Delivery Platform
+# 🛒 ShopNest — Smart Grocery Delivery Platform
 
-**A full-stack grocery delivery application with customer shopping, admin operations, delivery-partner workflows, real-time tracking, and order communication.**
+**A full-stack grocery shopping and delivery application with role-based dashboards, order management, live delivery tracking, real-time communication, and AI-assisted support.**
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-Realtime-010101?logo=socket.io)](https://socket.io/)
+<p>
+  <a href="https://github.com/samarthpandey158/groceryFolder"><strong>GitHub Repository</strong></a>
+  &nbsp;•&nbsp;
+  <a href="https://shopnest-brown.vercel.app/">Live Demo</a>
+</p>
 
 </div>
 
@@ -16,151 +16,150 @@
 
 ## 📌 Overview
 
-ShopNest is a full-stack grocery shopping and delivery platform built with **Next.js, React, TypeScript, MongoDB, and Socket.IO**. Its standout features are **map-based delivery tracking, real-time order chat, AI-powered chat suggestions, and OTP-verified delivery completion**. It brings together three role-based experiences in one application:
+**ShopNest** is a full-stack grocery delivery web application designed to bring the complete grocery ordering journey into one place. Customers can browse grocery items, manage their cart, place orders, and follow order progress. Administrators can manage grocery inventory and orders, while delivery partners can handle assigned deliveries and share location updates.
 
-- **Customers** can browse grocery products, manage their cart, place orders, choose a payment method, view order history, and track delivery.
-- **Administrators** can manage grocery inventory, manage orders, allocate available delivery partners, and view dashboard summaries.
-- **Delivery partners** can view assignments, share their location, communicate about an order, and complete a delivery using an email OTP verification workflow.
+The project combines a customer-facing shopping experience with administrative and delivery workflows. It also includes real-time communication, map-based location features, email OTP verification for delivery completion, online payment support, and an AI chat experience.
 
-A separate **Express + Socket.IO service** handles real-time events such as location updates, order-room messaging, and notifications. MongoDB with Mongoose stores application data.
+> **Portfolio note:** Replace `YOUR_DEPLOYED_APP_URL` with the public deployment URL before publishing. If the live demo is not available, remove the Live Demo link.
 
-> **Project note:** The supplied source code/package is named **ShopNest** in several places. If you want the portfolio project to be branded as **SnapCart**, make the README title, application branding, repository description, and deployed website name consistent. Add your live demo URL and real application screenshots before sharing this README with recruiters.
+## ✨ Key Features
 
-## ✨ Features
+### 🛍️ Customer Experience
+- Account registration and sign-in, including Google sign-in.
+- Browse grocery products by category and search for items.
+- Add products to the cart and adjust quantities.
+- Review the cart and order summary before checkout.
+- Place orders using the supported payment options: Cash on Delivery (COD) and Stripe, where configured.
+- View order information and follow order progress.
+- Select a delivery location using map-based functionality.
+- Access an AI-powered chat experience.
 
-> **Key differentiators:** map-based delivery tracking, real-time order communication, Gemini-powered AI chat suggestions, Stripe checkout, and OTP-verified delivery completion.
+### 🧑‍💼 Admin Dashboard
+- Dedicated admin dashboard.
+- Add and manage grocery products, including product images, categories, units, and prices.
+- Review grocery inventory and order information.
+- Manage order workflow and assign deliveries, according to the implemented admin flow.
+- View dashboard summaries and order-related information.
 
-### 🛍️ Customer experience
-- Account registration and sign-in.
-- Google sign-in and credentials-based authentication.
-- Browse grocery products and categories.
-- Add products to the cart and proceed to checkout.
-- Choose **Cash on Delivery (COD)** or the online Stripe checkout flow, where configured.
-- Provide a delivery address and location coordinates.
-- View previous orders and check order status.
-- Track delivery-partner location on a map.
-- Communicate in the order chat when the order workflow makes it available.
-- Receive email-based delivery OTPs and confirm delivery completion.
+### 🛵 Delivery Partner
+- Dedicated delivery-partner dashboard.
+- View delivery assignments and update delivery progress.
+- Share location updates for live tracking, when connected.
+- Use order communication features where enabled.
+- Complete the delivery verification flow using email OTP.
 
-### 🧑‍💼 Admin dashboard
-- Admin-facing sign-in and dashboard.
-- Add, view, edit, and delete grocery products.
-- View and manage customer orders.
-- Allocate orders to delivery partners through the delivery-assignment workflow.
-- Trigger order-status updates and notifications.
-- Review dashboard revenue summaries, including today, recent-period, and overall totals where supported by the current dashboard implementation.
-
-### 🛵 Delivery-partner experience
-- Delivery-partner account and dashboard.
-- View delivery assignments and accept an assignment.
-- View current delivery/order information.
-- Share location updates for map-based tracking.
-- Communicate through order-specific chat.
-- Generate and email a delivery OTP to the customer.
-- Complete delivery after OTP verification.
-- View delivery and earnings summaries where provided by the dashboard.
-
-### 🗺️ Live maps, real-time chat, and AI
-- **Address selection on a map:** customers can select or adjust delivery coordinates during checkout.
-- **Live delivery tracking:** the customer can view delivery-partner location updates on a map; the application uses Leaflet and React Leaflet for map UI.
-- **Real-time order chat:** the customer and delivery partner can communicate through an order-specific chat room, with messages persisted through a Next.js API route and real-time events delivered by Socket.IO.
-- **AI chat assistance:** the project includes a Google Gemini-powered API route for generating chat suggestions. The AI suggestion feature is distinct from the Socket.IO chat transport.
-- **Live status and notifications:** the separate Express + Socket.IO server relays events for relevant order and delivery workflows.
-- **Email OTP:** Nodemailer is used to email a delivery-verification OTP to the customer.
-- **Online payments:** Stripe integration supports the online payment workflow, alongside COD.
-- **Product media:** Cloudinary utility supports image handling/upload.
-
-### 🔌 Other integrations
-- **Email:** Nodemailer with SMTP configuration.
-- **Payments:** Stripe.
-- **AI:** Google Gemini API (`@google/genai`).
-- **Media:** Cloudinary.
-
-**Integration status:** Some features depend on valid external credentials and correct deployment configuration. Test each flow end-to-end before describing it as production-ready.
+### ⚡ Real-Time and Integrations
+- Socket.IO-powered real-time updates and communication.
+- Map-based location selection and delivery tracking.
+- Email delivery for OTP/transactional messages, subject to mail-provider configuration.
+- Stripe integration for online payments, subject to valid keys and webhook configuration.
+- Gemini API integration for AI chat functionality.
 
 ## 🧰 Technology Stack
 
 | Area | Technologies |
-|---|---|
-| Web framework | Next.js App Router |
-| UI | React, TypeScript |
-| Styling | Tailwind CSS |
-| Authentication | NextAuth, Credentials provider, Google provider |
-| Password hashing | bcrypt |
-| Client state | Redux Toolkit, React Redux |
-| Database | MongoDB |
-| ODM / data models | Mongoose |
-| Real-time communication | Socket.IO client, Socket.IO |
-| Socket service | Node.js, Express |
-| Maps and geolocation | Leaflet, React Leaflet, Leaflet GeoSearch |
-| HTTP requests | Axios |
-| Email | Nodemailer, Gmail SMTP |
-| Payments | Stripe |
-| AI integration | Google Gemini API (`@google/genai`) |
-| Media uploads | Cloudinary |
-| Icons and animation | Lucide React, React Icons, Motion |
-| Charts | Recharts |
-| Linting | ESLint |
+| --- | --- |
+| Web application | Next.js, React, TypeScript |
+| Styling and UI | Tailwind CSS and project UI components |
+| Server/API | Next.js Route Handlers |
+| Database | MongoDB, Mongoose |
+| Authentication | NextAuth.js, Credentials and Google providers |
+| Real-time communication | Socket.IO, separate Node.js/Express socket server |
+| Maps and location | Leaflet and location services |
+| Payments | Stripe and Cash on Delivery |
+| Email | Nodemailer |
+| AI | Google Gemini API |
+| Deployment | Vercel for the web app; deploy the socket server separately |
+
+*The table reflects the technologies used or discussed in this project. Features that depend on third-party services require their respective environment variables and provider configuration.*
+
+## 🖼️ Application Screenshots
+
+Screenshots below use image files stored in the **repository root**. Keep the filenames identical to the paths shown here, or update the paths if you move images into a folder.
+
+### 1. Welcome Screen
+![ShopNest welcome screen](welcome-screen.png)
+
+### 2. Customer Sign In
+![ShopNest customer sign-in](customer-sign-in.png)
+
+### 3. Customer Registration
+![ShopNest customer registration](customer-registration.png)
+
+### 4. Customer Homepage
+![ShopNest customer homepage](customer-homepage.png)
+
+### 5. Grocery Catalogue
+![ShopNest grocery catalogue](grocery-catalogue.png)
+
+### 6. Shopping Cart
+![ShopNest shopping cart](shopping-cart.png)
+
+### 7. Admin Dashboard
+![ShopNest admin dashboard](admin-dashboard.png)
+
+### 8. Manage Groceries
+![ShopNest manage groceries](admin-manage-groceries.png)
+
+### 9. Add Grocery Form
+![ShopNest add grocery form](admin-add-grocery.png)
+
+### 10. Grocery Added Successfully
+![ShopNest grocery added successfully](grocery-added-successfully.png)
+
+### 11. Delivery Partner Dashboard
+![ShopNest delivery partner dashboard](delivery-partner-dashboard.png)
+
+### 12. Delivery OTP Verification
+![ShopNest delivery OTP verification](otp-verification.png)
+
+> **Screenshot setup:** The existing repository screenshot names include `customer-homepage.png`, `grocery-catalogue.png`, `customer-sign-in.png`, `customer-registration.png`, `admin-dashboard.png`, `admin-manage-groceries.png`, `admin-add-grocery.png`, and `delivery-partner-dashboard.png`. For the additional screenshots above, upload the matching image files to the repository root with the exact names `welcome-screen.png`, `shopping-cart.png`, `grocery-added-successfully.png`, and `otp-verification.png`. If you do not want to add those extra files, remove their screenshot sections or change the paths to match your actual filenames.
 
 ## 🏗️ Application Architecture
 
-The repository contains two separately run applications: the Next.js web app and a standalone Socket.IO server.
-
 ```mermaid
 flowchart TD
-    U[Customer / Admin / Delivery Partner] --> W[Next.js Web Application]
-    W --> API[Next.js API Routes]
+    C[Customer Browser] --> W[Next.js Web Application]
+    A[Admin Browser] --> W
+    D[Delivery Partner Browser] --> W
+    W --> API[Next.js Route Handlers]
     API --> DB[(MongoDB via Mongoose)]
-    W <--> SC[Socket.IO Client]
-    SC <--> SS[Express + Socket.IO Server]
-    SS -->|Location and message persistence requests| API
-    SS -->|Live events, chat and notifications| SC
-    API --> EXT[External Integrations]
-    EXT --> STR[Stripe]
-    EXT --> SMTP[Nodemailer / SMTP]
-    EXT --> GEM[Google Gemini API]
-    EXT --> CLOUD[Cloudinary]
+    W <--> S[Express + Socket.IO Server]
+    W --> MAP[Leaflet / Map Services]
+    API --> MAIL[Nodemailer / Email Provider]
+    API --> PAY[Stripe]
+    W --> AI[Google Gemini API]
 ```
-
-### Main responsibilities
-- **Next.js application:** UI, authentication, API route handlers, order workflows, and database operations.
-- **MongoDB + Mongoose:** Users, groceries, orders, delivery assignments, and chat messages.
-- **Socket.IO service:** Persistent socket connections, order rooms, location broadcasts, and notification events.
-- **External services:** Stripe checkout, SMTP email, Gemini AI suggestions, and Cloudinary uploads.
 
 ## 📂 Repository Structure
 
+The repository contains the Next.js application and a separate Socket.IO server. The following is a high-level illustration; actual file names may differ as the project evolves.
+
 ```text
 groceryFolder/
-├── shopnest/                         # Next.js web application
+├── shopnest/       # Next.js application
 │   ├── src/
-│   │   ├── app/                      # Pages and API route handlers
-│   │   │   ├── admin/                # Admin pages
-│   │   │   ├── user/                 # Cart, checkout, orders and tracking
-│   │   │   └── api/                  # Authentication and application APIs
-│   │   ├── components/               # Customer, admin, delivery, map and chat UI
-│   │   ├── lib/                      # Database, mail, Cloudinary and socket utilities
-│   │   ├── models/                   # Mongoose models
-│   │   └── redux/                    # Redux store and slices
-│   ├── public/                       # Static assets
+│   │   ├── app/    # Pages and API route handlers
+│   │   ├── components/
+│   │   ├── lib/
+│   │   └── models/
+│   ├── public/
 │   ├── package.json
-│   └── next.config.ts
-├── socketServer/                     # Express + Socket.IO service
-│   ├── index.js
-│   └── package.json
-└── README.md
+│   └── ...
+├── socketServer/   # Express and Socket.IO server
+│   ├── package.json
+│   └── ...
+├── README.md
+└── *.png           # Repository screenshots (if kept in the root)
 ```
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js and npm compatible with the versions required by the project dependencies.
-- A MongoDB database (local or hosted).
-- Google OAuth credentials if Google sign-in is to be used.
-- SMTP credentials / a Gmail App Password if email sending is to be used.
-- Stripe API credentials for online checkout.
-- Gemini API key for AI suggestions.
-- Cloudinary credentials if image uploads are used.
+- Node.js and npm compatible with the project's dependencies.
+- A MongoDB database.
+- Credentials for any integrations you want to enable (Google OAuth, Stripe, email, Gemini).
+- A separately running/deployed Socket.IO server for real-time features.
 
 ### 1. Clone the repository
 
@@ -169,222 +168,112 @@ git clone https://github.com/samarthpandey158/groceryFolder.git
 cd groceryFolder
 ```
 
-### 2. Install the Next.js application dependencies
+### 2. Install the web application dependencies
+
+Open the Next.js application directory. In this repository it is expected to be `shopnest/`:
 
 ```bash
 cd shopnest
 npm install
 ```
 
-Create `shopnest/.env.local` and add the environment variables listed below.
+### 3. Configure environment variables
 
-### 3. Install the Socket.IO service dependencies
+Create a `.env.local` file in the Next.js app directory and use the variable names expected by your code. **Do not commit real secrets.**
 
-Open a **second terminal** from the repository root:
-
-```bash
-cd socketServer
-npm install
-```
-
-Create `socketServer/.env` and configure its variables.
-
-### 4. Start both applications
-
-**Terminal 1 — Next.js web app**
-
-```bash
-cd shopnest
-npm run dev
-```
-
-The app normally runs at [http://localhost:3000](http://localhost:3000).
-
-**Terminal 2 — Socket.IO server**
-
-```bash
-cd socketServer
-npm run dev
-```
-
-The socket service defaults to port `5000`. Keep both processes running while testing real-time features.
-
-## 🔐 Environment Configuration
-
-Create environment files locally. **Never commit real secrets, passwords, tokens, database URLs, or API keys.** The variable names below are based on references in the supplied source code; check the current code before changing names.
-
-### `shopnest/.env.local`
+Typical configuration categories include:
 
 ```env
-# MongoDB
-MONGODB_URL=
+# Database
+MONGODB_URI=
 
-# NextAuth
-AUTH_SECRET=
+# Authentication
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
 
-# Google OAuth (optional if Google sign-in is enabled)
+# Google OAuth
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
-
-# Public Socket.IO server URL
-NEXT_PUBLIC_SOCKET_SERVER=http://localhost:5000
-
-# Gmail SMTP / Nodemailer
-EMAIL=
-PASS=
 
 # Stripe
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 
-# Cloudinary image uploads
-CLOUDINARY_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECERT=
+# Email / Nodemailer
+EMAIL=
+PASS=
 
-# Google Gemini AI
+# Google Gemini
 GEMINI_API_KEY=
 
-# Base URL used by the payment flow
-NEXT_BASE_URL=http://localhost:3000
+# Socket server URL — use the variable name referenced by your app
+NEXT_PUBLIC_SOCKET_URL=
 ```
 
-### `socketServer/.env`
+These are illustrative placeholders, not a guarantee that every variable name matches your source code. Check your `.env` usage in the project and keep the names consistent with your implementation. Do not publish API keys, passwords, database connection strings, or webhook secrets.
 
-```env
-PORT=5000
-NEXT_BASE_URL=http://localhost:3000
+### 4. Run the Next.js application
+
+```bash
+npm run dev
 ```
 
-### Environment-variable notes
-- `MONGODB_URL` is the MongoDB connection string.
-- `AUTH_SECRET` is the NextAuth secret.
-- `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` are for Google OAuth.
-- `NEXT_PUBLIC_SOCKET_SERVER` is the browser-facing Socket.IO server URL.
-- `EMAIL` and `PASS` are used by Nodemailer. For Gmail, use an App Password where required; do not use your normal account password.
-- `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` are used by the payment integration and webhook flow.
-- `CLOUDINARY_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECERT` are used by the current Cloudinary utility. **The source currently spells `SECRET` as `SECERT`; keep the variable name aligned with the source until you correct the spelling in the code.**
-- `GEMINI_API_KEY` is used by the Gemini integration.
-- `NEXT_BASE_URL` is used to construct application URLs. Configure it for the deployed web-app URL in production.
+Open the local URL printed in the terminal (typically `http://localhost:3000`).
 
-For production, set environment variables in each hosting provider's dashboard. Update `NEXT_PUBLIC_SOCKET_SERVER` to the deployed socket URL, set `NEXT_BASE_URL` to the deployed web-app URL, and restrict Socket.IO CORS to the expected frontend origin.
+### 5. Run the Socket.IO server
 
-## 🧾 Main Data Models
+Open a second terminal and run:
 
-| Model | Purpose |
-|---|---|
-| `User` | Account details, role, profile, online/socket information, and location |
-| `Grocery` | Grocery product information, category, price, unit, and image |
-| `Order` | Customer, items, amount, address, payment method, status, and delivery OTP data |
-| `DeliveryAssignment` | Order assignment and delivery-partner workflow |
-| `Message` | Order-room chat messages |
+```bash
+cd socketServer
+npm install
+npm run
+```
 
-The user model includes a GeoJSON-style location field, and the application uses location coordinates for delivery tracking.
+Check `socketServer/package.json` for the actual available start/development script, then run that script (for example, `npm run dev` or `npm start` if defined).
 
-## 🔄 Example Order Workflow
+## 🔐 Security and Deployment Notes
 
-1. A customer signs in, selects groceries, and checks out.
-2. The customer chooses COD or proceeds through the configured Stripe checkout flow.
-3. The order is stored and becomes available to the admin workflow.
-4. The admin manages the order and assigns an available delivery partner.
-5. The delivery partner receives assignment/status updates and can share their location.
-6. The customer can view order progress and map-based location updates; the relevant participants can communicate through the order chat where enabled.
-7. When the delivery partner is ready to complete the delivery, the application generates an OTP and emails it to the customer.
-8. The customer provides the OTP for verification. On successful verification, the order status is changed to `Delivered` and a status event is emitted.
+- Keep `.env.local` and all secrets out of Git.
+- Configure production environment variables in the hosting platform.
+- Configure Google OAuth redirect URLs for the deployed domain.
+- Configure Stripe webhooks using the deployed webhook endpoint.
+- Use an email provider configuration suitable for production and test delivery to inboxes.
+- Deploy the Socket.IO server separately if the hosting setup does not support the required persistent WebSocket connections.
+- Validate authorization and role permissions on the server, not only in the UI.
+- Do not expose private keys or server-only environment variables with a `NEXT_PUBLIC_` prefix.
+- Test checkout, OTP delivery, live tracking, and real-time messaging in the deployed environment before presenting them as production-ready.
 
-Actual notification delivery and payment completion depend on correct credentials, webhook configuration, authorization, and deployment settings.
+## 🧪 Suggested Portfolio Demo Flow
 
-## 🖥️ Application Screenshots
+1. Register or sign in as a customer.
+2. Browse the catalogue and add grocery items to the cart.
+3. Review the cart and place a test/COD order.
+4. Open the admin dashboard and manage products or the order workflow.
+5. Assign the order to a delivery partner.
+6. Demonstrate delivery status updates and map-based location tracking.
+7. Show the OTP verification flow and AI chat feature.
 
-These screenshots show the current ShopNest UI for customer access, grocery shopping, and administration/delivery-partner dashboards.
+Use test accounts and test payment credentials during demonstrations. Do not include private credentials in the README.
 
-<table>
-  <tr>
-    <td width="50%"><strong>Customer Homepage</strong><br><img src="customer-homepage.png" alt="ShopNest customer homepage"></td>
-    <td width="50%"><strong>Grocery Catalogue</strong><br><img src="grocery-catalogue.png" alt="ShopNest grocery catalogue"></td>
-  </tr>
-  <tr>
-    <td width="50%"><strong>Customer Sign In</strong><br><img src="customer-sign-in.png" alt="ShopNest customer sign in"></td>
-    <td width="50%"><strong>Customer Registration</strong><br><img src="customer-registration.png" alt="ShopNest customer registration"></td>
-  </tr>
-  <tr>
-    <td width="50%"><strong>Admin Dashboard</strong><br><img src="admin-dashboard.png" alt="ShopNest admin dashboard"></td>
-    <td width="50%"><strong>Manage Groceries</strong><br><img src="admin-manage-groceries.png" alt="ShopNest manage groceries"></td>
-  </tr>
-  <tr>
-    <td width="50%"><strong>Add Grocery</strong><br><img src="admin-add-grocery.png" alt="ShopNest add grocery form"></td>
-    <td width="50%"><strong>Delivery Partner Dashboard</strong><br><img src="delivery-partner-dashboard.png" alt="ShopNest delivery partner dashboard"></td>
-  </tr>
-</table>
+## 🎯 What This Project Demonstrates
 
-> **Visuals still to add:** Add clean screenshots of live map tracking, the AI-chat interface, order chat, checkout/payment selection, and OTP verification. The OTP screenshot supplied included browser developer-console errors, so it has intentionally been left out of this public-facing gallery.
-
-
-## 🧪 Available Scripts
-
-### Next.js app (`shopnest`)
-
-| Command | Purpose |
-|---|---|
-| `npm run dev` | Start the development server |
-| `npm run build` | Build the app for production |
-| `npm run start` | Start the production server |
-| `npm run lint` | Run ESLint |
-
-### Socket service (`socketServer`)
-
-| Command | Purpose |
-|---|---|
-| `npm run dev` | Run `index.js` with Nodemon |
-
-## 🔒 Security and Deployment Checklist
-
-Before using this as a public portfolio project, review these items carefully:
-
-- [ ] Confirm `.env`, `.env.local`, and all credentials are ignored by Git.
-- [ ] Rotate any secret that was ever committed to a public repository.
-- [ ] Enforce server-side authentication and role-based authorization on admin and delivery APIs.
-- [ ] Validate request bodies and socket-event payloads.
-- [ ] Verify that users can access only their own orders and permitted chat rooms.
-- [ ] Authenticate and authorize the Socket.IO notification endpoint before exposing it publicly.
-- [ ] Verify online payments through trusted Stripe server/webhook events rather than trusting client-side status.
-- [ ] Restrict Socket.IO CORS to the intended frontend origin.
-- [ ] Test registration, sign-in, checkout, assignment, live tracking, chat, email OTP, and OTP verification end-to-end.
-- [ ] Run `npm run lint` and `npm run build` and fix any errors before deployment.
-
-### Deployment outline
-1. Deploy the `shopnest` Next.js application to a Next.js-compatible host.
-2. Deploy `socketServer` separately to a host that supports persistent WebSocket connections.
-3. Set each service's environment variables in its hosting dashboard.
-4. Configure the frontend's Socket.IO URL and the socket server's allowed frontend origin.
-5. Configure OAuth callback URLs, Stripe webhook settings, SMTP, Gemini, and Cloudinary as needed.
-6. Test the deployed application using non-sensitive test accounts and test payment flows.
-
-## 🗺️ Roadmap
-
-Potential improvements for a stronger production-quality portfolio:
-
-- [ ] Add automated unit and integration tests for authentication, checkout, order updates, and delivery OTP verification.
-- [ ] Add CI checks for linting, tests, and production builds.
-- [ ] Document API contracts, request payloads, responses, and authorization requirements.
-- [ ] Add rate limiting and stronger validation for sensitive APIs and socket events.
-- [ ] Add structured logging and production error monitoring.
-- [ ] Improve accessibility, loading states, empty states, and error states.
-- [ ] Add pagination and robust product search/filtering for larger catalogues.
-- [ ] Add a short project demo video and a complete screenshot gallery.
+- Full-stack application development with Next.js and TypeScript.
+- Data modelling and persistence with MongoDB and Mongoose.
+- Authentication and role-based application flows.
+- API route implementation and third-party service integration.
+- Real-time features using Socket.IO.
+- Map-based UI and delivery workflow design.
+- Payment and email integration.
+- Admin/customer/delivery-partner workflows in one application.
 
 ## 👨‍💻 Author
 
 **Samarth Pandey**  
-
-
-- GitHub: [@samarthpandey158](https://github.com/samarthpandey158)
-- LinkedIn: **Add your LinkedIn profile URL**
+GitHub: [@samarthpandey158](https://github.com/samarthpandey158)
 
 ---
 
 <div align="center">
-
-Built as a full-stack portfolio project to explore grocery commerce, role-based workflows, payment integration, and real-time delivery experiences.
-
+  <sub>Built as a full-stack grocery delivery project. Please check the repository for the current implementation and setup requirements.</sub>
 </div>
