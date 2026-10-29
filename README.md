@@ -1,358 +1,442 @@
 <div align="center">
 
 # 🛒 ShopNest
-### Smart Grocery Delivery Platform
 
-**Shop smarter. Track deliveries live. Get AI-powered assistance.**
+### Your Smart Grocery Shopping & Delivery Platform
 
-A full-stack grocery delivery platform built with **Next.js, MongoDB, Socket.IO, AI, and interactive maps**.
+**Shop smarter. Track faster. Deliver better.**
+
+A full-stack grocery delivery application featuring AI-powered assistance, interactive maps, real-time delivery tracking, secure authentication, and live communication between customers and delivery partners.
 
 <br/>
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_ShopNest-16a34a?style=for-the-badge)](https://shopnest-india.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-View_Repository-181717?style=for-the-badge&logo=github)](https://github.com/samarthpandey158/groceryFolder)
-[![Next.js](https://img.shields.io/badge/Next.js-App-000000?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Database-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-Realtime-010101?style=for-the-badge&logo=socket.io)](https://socket.io/)
+<a href="https://shopnest-india.vercel.app">
+  <img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Visit_ShopNest-16a34a?style=for-the-badge" alt="Live Demo"/>
+</a>
+<a href="https://github.com/samarthpandey158/groceryFolder">
+  <img src="https://img.shields.io/badge/GITHUB-View_Repository-181717?style=for-the-badge&logo=github" alt="GitHub Repository"/>
+</a>
+
+<br/><br/>
+
+<img src="https://img.shields.io/badge/Next.js-Framework-black?style=flat-square&logo=next.js" alt="Next.js"/>
+<img src="https://img.shields.io/badge/TypeScript-Language-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript"/>
+<img src="https://img.shields.io/badge/MongoDB-Database-47A248?style=flat-square&logo=mongodb&logoColor=white" alt="MongoDB"/>
+<img src="https://img.shields.io/badge/Socket.IO-Realtime-black?style=flat-square&logo=socket.io" alt="Socket.IO"/>
+<img src="https://img.shields.io/badge/Gemini-AI_Assistant-4285F4?style=flat-square&logo=googlegemini&logoColor=white" alt="Gemini AI"/>
 
 </div>
 
-<p align="center">
-  <b>🤖 Gemini AI</b> &nbsp; • &nbsp; <b>🗺️ Map-Based Location</b> &nbsp; • &nbsp; <b>📍 Live Delivery Updates</b> &nbsp; • &nbsp; <b>🔐 Role-Based Access</b>
-</p>
+---
+
+## 📌 About the Project
+
+**ShopNest** is a full-stack grocery shopping and delivery platform designed to simplify online grocery ordering and delivery management.
+
+Customers can explore groceries, place orders, select their delivery location, communicate in real time, and track their deliveries. Administrators can manage grocery products and orders, while delivery partners can access assigned deliveries and share their location.
+
+The application combines modern web technologies with AI integration, geolocation, and real-time communication to create a complete shopping and delivery experience.
+
+## ✨ Key Features
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🛍️ Grocery Shopping
+
+* Browse available grocery products.
+* Add products to the cart.
+* Proceed through the checkout process.
+* Place and manage orders.
+* View order status and updates.
+
+</td>
+<td width="50%" valign="top">
+
+### 🤖 AI Shopping Assistant
+
+* AI-powered conversational assistance.
+* Grocery-related queries and suggestions.
+* Gemini API integration.
+* Interactive chat experience.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🗺️ Maps & Location
+
+* Interactive maps using Leaflet.
+* Map-based delivery address selection.
+* Geolocation-based features.
+* Delivery location visualization.
+
+</td>
+<td width="50%" valign="top">
+
+### 🚚 Real-Time Delivery Tracking
+
+* Delivery partner location updates.
+* Real-time communication using Socket.IO.
+* Order status tracking.
+* Delivery assignment workflow.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 👨‍💼 Admin Dashboard
+
+* Manage grocery products.
+* Access order management features.
+* Update order status.
+* Support delivery management workflows.
+
+</td>
+<td width="50%" valign="top">
+
+### 💬 Live Communication
+
+* Real-time messaging.
+* Socket.IO room-based communication.
+* Customer and delivery-related communication.
+* Order-linked messaging functionality.
+
+</td>
+</tr>
+</table>
+
+### 🔐 Authentication & Payments
+
+* Credentials-based authentication.
+* Google sign-in integration.
+* Password hashing with bcrypt.
+* Stripe payment integration.
+* Email notifications and delivery OTP functionality.
 
 ---
 
-## 🧭 Table of Contents
+## 🖥️ Technology Stack
 
-- [Overview](#overview)
-- [Live Demo](#live-demo)
-- [Features](#features)
-- [AI Chat Experience](#ai-chat-experience)
-- [Maps and Live Delivery Tracking](#maps-and-live-delivery-tracking)
-- [Technology Stack](#technology-stack)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Run Locally](#run-locally)
-- [Environment Variables](#environment-variables)
-- [Data Models](#data-models)
-- [Order Workflow](#order-workflow)
-- [Deployment Notes](#deployment-notes)
-- [Security Considerations](#security-considerations)
-- [Author](#author)
+| Category         | Technologies                |
+| ---------------- | --------------------------- |
+| Frontend         | Next.js, React, TypeScript  |
+| Styling          | Tailwind CSS                |
+| Backend          | Next.js API Routes, Node.js |
+| Real-Time Server | Express.js, Socket.IO       |
+| Database         | MongoDB, Mongoose           |
+| Authentication   | NextAuth.js, Google OAuth   |
+| State Management | Redux Toolkit               |
+| AI Integration   | Google Gemini API           |
+| Maps             | Leaflet, React Leaflet      |
+| Payments         | Stripe                      |
+| Email            | Nodemailer                  |
+| Media Storage    | Cloudinary                  |
+| HTTP Requests    | Axios                       |
+| Icons            | Lucide React, React Icons   |
 
-## ✨ Overview
+---
 
-**ShopNest** is a full-stack grocery shopping and delivery platform designed around three roles: **Customer, Admin, and Delivery Partner**. Customers can browse grocery products, manage a cart, place orders, and follow delivery progress. Administrators can manage grocery listings and order workflows. Delivery partners can view assigned deliveries, update order progress, and share their location for tracking.
-
-The application combines a Next.js web application with a separate Express and Socket.IO service. It integrates database-backed order management, authentication, AI-assisted chat, map-based location features, real-time communication, email OTP verification, and payment/media services.
-
-## 🌐 Live Demo
-
-- **Web application:** [https://shopnest-india.vercel.app](https://shopnest-brown.vercel.app)
-- **Source code:** [GitHub — groceryFolder](https://github.com/samarthpandey158/groceryFolder)
-
-The web app is deployed on **Vercel**. Real-time location and messaging also depend on the separately deployed Socket.IO service and its configuration. Availability of third-party features depends on their credentials and service status.
-
-> **Tip:** If you are reviewing this project for an internship or collaboration, start with the live demo, then explore the AI chat and map-based delivery flow.
-
-## 🚀 Features
-
-### 🛍️ Customer
-- Register and sign in using the authentication providers configured in the application.
-- Browse grocery products and categories.
-- Search for products and manage cart quantities.
-- Review cart details and proceed to checkout.
-- Place orders using Cash on Delivery (COD) or the configured Stripe payment flow.
-- View order details and follow order status.
-- Choose a delivery location using the map interface.
-- Track delivery progress and location updates when the real-time service is connected.
-- Use the AI-assisted chat experience.
-
-### 🧑‍💼 Admin
-- Access a dedicated admin dashboard.
-- Add and manage grocery products and listing details.
-- Review grocery inventory and order information.
-- Manage order progress and delivery assignments through the admin workflow.
-
-### 🛵 Delivery Partner
-- Access a dedicated delivery-partner dashboard.
-- View assigned deliveries.
-- Update delivery progress.
-- Share location updates for live tracking when connected.
-- Complete delivery verification through the email OTP workflow.
-
-### ⚡ Real-Time Communication & Integrations
-- Socket.IO events for real-time updates.
-- Order-associated chat between relevant participants.
-- Leaflet-based map interface and location functionality.
-- Nodemailer/SMTP for email OTP and transactional messages.
-- Stripe for online payments, when correctly configured.
-- Cloudinary for media handling.
-- Google Gemini API for AI-assisted chat functionality.
-
-## 🤖 AI Chat Experience
-
-ShopNest integrates the **Google Gemini API** to provide an AI-assisted chat experience within the grocery application.
-
-The AI feature adds an interactive assistance layer to the shopping experience, rather than limiting the platform to static product listings and checkout screens. It can support user-facing chat or suggestions according to the prompts and flows implemented in the application.
-
-**Implementation note:** AI responses depend on the configured Gemini API key, network availability, provider limits, and the code's prompt/response handling. Do not present AI output as guaranteed, always correct, or a substitute for official order or payment status.
-
-## 🗺️ Maps & Live Delivery Tracking
-
-ShopNest includes a **Leaflet-based map interface** and location functionality to support delivery-location selection and order tracking.
-
-The map and real-time flow are designed to connect the customer experience with delivery-partner location updates:
-
-1. A delivery location can be selected through the map-based interface.
-2. The delivery partner's client can send coordinate updates to the Socket.IO service.
-3. The real-time service broadcasts location events to connected clients and can call the Next.js API for related application operations.
-4. The customer-facing interface can display delivery progress and location updates while the relevant services are online.
-
-This is a combination of **geospatial UI and real-time event communication**: Leaflet renders the map interface, while Socket.IO carries live events. The accuracy and freshness of tracking depend on device location permissions, connectivity, update frequency, and the deployed socket service.
-
-## 🧰 Technology Stack
-
-| Category | Technologies |
-|---|---|
-| Web framework | Next.js App Router, React, TypeScript |
-| Styling and UI | Tailwind CSS, Lucide React, React Icons, Motion |
-| Client state | Redux Toolkit, React Redux |
-| Authentication | NextAuth, Credentials provider, Google provider, bcrypt |
-| Database | MongoDB |
-| Data modelling | Mongoose |
-| Real-time communication | Socket.IO client, Socket.IO |
-| Socket server | Node.js, Express |
-| Maps and location UI | Leaflet, React Leaflet, Leaflet GeoSearch |
-| HTTP requests | Axios |
-| Email | Nodemailer with SMTP |
-| Media | Cloudinary |
-| Payments | Stripe and Cash on Delivery |
-| AI | Google Gemini API |
-| Code quality | ESLint |
-| Web deployment | Vercel; Socket.IO service deployed separately |
-
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
-    Customer[Customer] --> Web[Next.js Web Application]
-    Admin[Admin] --> Web
-    Delivery[Delivery Partner] --> Web
+    A[Customer] --> F[ShopNest Frontend]
+    B[Admin] --> F
+    C[Delivery Partner] --> F
 
-    Web --> API[Next.js API Routes]
-    API --> DB[(MongoDB / Mongoose)]
+    F --> API[Next.js API Routes]
+    F <--> RT[Socket.IO Server]
 
-    Web <--> Client[Socket.IO Client]
-    Client <--> Socket[Express + Socket.IO Service]
-    Socket -->|Location and chat operations| API
+    API --> DB[(MongoDB)]
+    API --> AUTH[Authentication]
+    API --> PAY[Stripe Payments]
+    API --> MAIL[Email Notifications]
+    API --> AI[Gemini AI API]
+    API --> MAP[Location & Delivery Data]
 
-    Web --> Maps[Leaflet Map UI]
-    Web --> AI[Google Gemini API]
-    API --> Email[Nodemailer / SMTP]
-    API --> Payment[Stripe]
-    API --> Media[Cloudinary]
+    RT <--> F
+    RT --> LOC[Live Location Updates]
+    RT --> CHAT[Real-Time Messaging]
 ```
 
-The Next.js application handles the UI, authentication, application APIs, and database operations. The separate Socket.IO service manages persistent real-time connections and emits events to connected clients. The AI, map, email, payment, and media integrations provide additional capabilities around the core grocery-ordering workflow.
+### How It Works
+
+1. Customers browse products and add items to their cart.
+2. Customers select their delivery address and place an order.
+3. The backend processes order data and stores relevant information in MongoDB.
+4. Administrators manage products and order workflows.
+5. Delivery partners receive delivery assignments and update their location.
+6. Socket.IO supports real-time messaging and location updates.
+7. Gemini AI provides conversational assistance.
+8. Email functionality supports notifications and delivery verification workflows.
+
+---
+
+## 🗺️ AI & Real-Time Location: What Makes ShopNest Different?
+
+### 🤖 AI-Powered Assistance
+
+ShopNest integrates the Google Gemini API to provide an AI-powered conversational experience.
+
+**Why it matters:**
+
+* Demonstrates integration with a generative AI API.
+* Adds an interactive assistance layer to the shopping experience.
+* Shows experience working with API keys and external AI services.
+
+### 📍 Interactive Maps
+
+Leaflet and React Leaflet provide map-based functionality for location-related features.
+
+**Why it matters:**
+
+* Supports visual address selection and location display.
+* Demonstrates integration of mapping libraries into a full-stack application.
+* Provides a foundation for location-aware delivery workflows.
+
+### 🚚 Real-Time Delivery Updates
+
+Socket.IO enables real-time communication between the frontend and the separate socket server.
+
+**Why it matters:**
+
+* Supports live location updates.
+* Enables real-time messaging.
+* Demonstrates event-driven communication between application components.
+
+> **Note:** Live tracking depends on the availability of the socket server, location permissions, and the configured environment variables.
+
+---
 
 ## 📁 Project Structure
 
+The repository contains the main application and a separate socket server.
+
 ```text
 groceryFolder/
-├── shopnest/                  # Next.js web application
+│
+├── shopnest/
+│   ├── public/
 │   ├── src/
-│   │   ├── app/               # Pages, layouts, and API route handlers
-│   │   ├── components/         # Customer, admin, delivery, map, and chat UI
-│   │   ├── lib/                # Database, email, media, and socket utilities
-│   │   ├── models/             # Mongoose models
-│   │   └── redux/              # Redux store and slices
-│   ├── public/                 # Static assets
+│   │   ├── app/
+│   │   │   └── api/
+│   │   ├── components/
+│   │   ├── lib/
+│   │   ├── models/
+│   │   ├── hooks/
+│   │   └── ...
 │   ├── package.json
-│   └── next.config.ts
-├── socketServer/               # Express + Socket.IO service
+│   └── ...
+│
+├── socketServer/
 │   ├── index.js
-│   └── package.json
+│   ├── package.json
+│   └── ...
+│
 └── README.md
 ```
 
-This is a high-level overview of the repository; exact subdirectories may change as the project evolves.
+*Note: The structure above is a high-level overview. Some folders and files may differ in your actual repository.*
 
-## ⚙️ Run Locally
+---
+
+## ⚙️ Getting Started
+
+Follow these steps to run ShopNest locally.
 
 ### Prerequisites
-- Node.js and npm compatible with the dependencies declared in the project's `package.json` files.
-- A MongoDB database (local or hosted).
-- Google OAuth credentials if Google sign-in is enabled.
-- SMTP credentials if email delivery is enabled.
-- Stripe credentials if online payments are enabled.
-- Cloudinary and Gemini credentials for the corresponding integrations.
-- A host capable of maintaining Socket.IO connections for the real-time service.
 
-### 1. Clone the repository
+Install the following:
+
+* [Node.js](https://nodejs.org/)
+* npm
+* MongoDB database or a MongoDB Atlas connection
+* Git
+
+API credentials are required for the third-party services you want to use.
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/samarthpandey158/groceryFolder.git
+```
+
+```bash
 cd groceryFolder
 ```
 
-### 2. Install the web application dependencies
+### 2. Install Frontend Dependencies
 
 ```bash
 cd shopnest
 npm install
 ```
 
-Create `shopnest/.env.local` and configure the variables used by your current code.
+### 3. Configure Environment Variables
 
-### 3. Install the Socket.IO service dependencies
+Create a `.env.local` file inside the `shopnest` directory.
 
-Open a second terminal from the repository root:
-
-```bash
-cd socketServer
-npm install
-```
-
-Create `socketServer/.env` and configure the socket service.
-
-### 4. Start both services
-
-**Terminal 1 — Next.js web application**
-
-```bash
-cd shopnest
-npm run dev
-```
-
-The web app normally starts at `http://localhost:3000`.
-
-**Terminal 2 — Socket.IO service**
-
-```bash
-cd socketServer
-npm run dev
-```
-
-Check `socketServer/package.json` for the exact script name if it differs in your local checkout. Both services must be running to test real-time features locally.
-
-## 🔑 Environment Variables
-
-The following variable names are based on project documentation and code references available for this repository. **Confirm names against the current source before deploying. Never commit real credentials.**
-
-### `shopnest/.env.local`
+Add the environment variables required by your implementation:
 
 ```env
-# MongoDB
-MONGODB_URL=
+MONGODB_URL=your_mongodb_connection_string
 
-# Authentication
-AUTH_SECRET=
+AUTH_SECRET=your_auth_secret
 
-# Google OAuth
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-# Socket.IO URL used by the frontend
-NEXT_PUBLIC_SOCKET_SERVER=http://localhost:5000
+GEMINI_API_KEY=your_gemini_api_key
 
-# Nodemailer / SMTP
-EMAIL=
-PASS=
+STRIPE_SECRET_KEY=your_stripe_secret_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 
-# Stripe
-STRIPE_SECRET_KEY=
-STRIPE_WEBHOOK_SECRET=
+EMAIL=your_email
+PASS=your_email_app_password
 
-# Cloudinary
-CLOUDINARY_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECERT=
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_cloudinary_api_key
+CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
-# Google Gemini
-GEMINI_API_KEY=
-
-# Base URL used by application/payment flows
 NEXT_BASE_URL=http://localhost:3000
+
+NEXT_PUBLIC_SOCKET_SERVER=http://localhost:5000
 ```
 
-### `socketServer/.env`
+**Important:**
+
+* Use the exact environment variable names referenced by your source code.
+* If your implementation uses a different Socket.IO URL variable, configure that name instead.
+* Some variables are only required for the corresponding features.
+* Configure the correct Google OAuth redirect URLs and Stripe webhook endpoint.
+* Never commit real credentials or secret keys to GitHub.
+
+### 4. Start the Frontend
+
+From the `shopnest` directory:
+
+```bash
+npm run dev
+```
+
+Open:
+
+```text
+http://localhost:3000
+```
+
+### 5. Start the Socket.IO Server
+
+Open a separate terminal:
+
+```bash
+cd socketServer
+npm install
+```
+
+Configure the socket server's environment variables according to its source code. For example:
 
 ```env
 PORT=5000
 NEXT_BASE_URL=http://localhost:3000
 ```
 
-**Configuration notes**
-- `MONGODB_URL` is the MongoDB connection string.
-- `AUTH_SECRET` is used for authentication/session security.
-- `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` configure Google OAuth.
-- `NEXT_PUBLIC_SOCKET_SERVER` should point to the Socket.IO server. Confirm that the frontend uses this exact variable name.
-- `EMAIL` and `PASS` are used by Nodemailer. If using Gmail, use an App Password where required.
-- `STRIPE_SECRET_KEY` and `STRIPE_WEBHOOK_SECRET` are used by the Stripe integration and webhook flow.
-- The current Cloudinary variable reference spells the secret as `CLOUDINARY_API_SECERT`. This appears to be a typo; consider correcting it consistently in the code and environment configuration before production use.
-- `GEMINI_API_KEY` is used by the Gemini integration.
-- `NEXT_BASE_URL` should point to the web application's base URL. Use the deployed URL in production.
-- Configure Socket.IO CORS to allow only the intended frontend origin.
+Start the socket server using the script defined in its `package.json`. If the project uses a `dev` script:
 
-## 🗃️ Data Models
+```bash
+npm run dev
+```
 
-The application includes Mongoose models for the following entities:
+The frontend and socket server must both be running for local real-time features to work.
 
-| Model | Responsibility |
-|---|---|
-| `User` | Account/profile details, role, online status, socket ID, and location |
-| `Grocery` | Product information such as name, category, price, unit, and image |
-| `Order` | Customer, items, total, payment method/status, delivery address, OTP, and order status |
-| `DeliveryAssignment` | Delivery assignment and delivery-partner workflow |
-| `Message` | Messages associated with an order room |
+---
 
-The user location uses a GeoJSON-style field with a `2dsphere` index for geospatial functionality.
+## 🌐 Live Demo
 
-## 🔄 Order Workflow
+Try the deployed application:
 
-1. A customer signs in, browses groceries, and adds items to the cart.
-2. The customer proceeds to checkout and selects an available payment method.
-3. The order is stored and becomes available to the admin workflow.
-4. The admin manages the order and assigns a delivery partner.
-5. The delivery partner updates delivery progress and shares location updates.
-6. The customer can follow order progress and map-based location updates while real-time services are connected.
-7. Relevant participants can exchange messages through the order chat where enabled.
-8. Delivery completion can be verified through the email OTP workflow.
+<div align="center">
 
-Payment completion, email delivery, and live tracking depend on correct credentials, provider configuration, authorization, and deployment settings.
+### 🛒 Experience ShopNest
 
-## 🚀 Deployment Notes
+<a href="https://shopnest-india.vercel.app">
+  <img src="https://img.shields.io/badge/OPEN_LIVE_APPLICATION-16a34a?style=for-the-badge&logo=vercel&logoColor=white" alt="Open ShopNest"/>
+</a>
 
-The web application is deployed on Vercel. The real-time Socket.IO service is hosted separately, so both deployments must be correctly configured for live location and chat features.
+</div>
 
-Before sharing the demo:
-- Verify the public web app opens and key customer flows work.
-- Confirm the deployed Socket.IO URL is configured in the Vercel environment variables.
-- Confirm the socket server allows requests from the deployed web-app origin.
-- Test Google OAuth redirect URLs, email OTP delivery, and Stripe webhook configuration if those integrations are enabled.
-- Test AI chat and map tracking in the deployed environment, not only on localhost.
+**Live URL:** https://shopnest-india.vercel.app
 
-## 🛡️ Security Considerations
+Some features may depend on the availability of external services, database connectivity, authentication configuration, and the deployed socket server.
 
-- Never commit `.env`, `.env.local`, database credentials, API keys, OAuth secrets, SMTP passwords, or payment secrets.
-- Keep server-only secrets out of variables prefixed with `NEXT_PUBLIC_`.
-- Enforce role and order-ownership checks in server-side API routes.
-- Validate request bodies and Socket.IO event payloads.
-- Verify payment status using trusted server-side provider/webhook events.
-- Restrict internal notification endpoints and order-room access.
-- If a secret was committed, rotate or revoke it; removing it from the latest commit is not sufficient.
+---
+
+## 🔒 Security Considerations
+
+* Keep API keys and database credentials in environment variables.
+* Never expose private API keys through `NEXT_PUBLIC_` variables.
+* Validate and authorize requests on the server.
+* Hash passwords before storing them.
+* Configure OAuth redirect URLs correctly.
+* Verify payment webhooks before trusting payment events.
+* Protect admin and delivery-partner routes with appropriate authorization.
+* Avoid committing `.env` or `.env.local` files.
+
+---
+
+## 🚀 Future Improvements
+
+Potential enhancements include:
+
+* [ ] Improve AI-assisted product discovery.
+* [ ] Add advanced grocery search and filtering.
+* [ ] Improve live tracking reliability and location update handling.
+* [ ] Add delivery time estimates.
+* [ ] Expand analytics for administrators.
+* [ ] Improve automated testing and error monitoring.
+* [ ] Enhance accessibility and mobile responsiveness.
+* [ ] Add more comprehensive order and payment reporting.
+
+---
+
+## 🎯 Project Highlights
+
+ShopNest demonstrates practical experience with:
+
+* Full-stack application development.
+* REST API development and database integration.
+* Authentication and authorization.
+* Third-party AI API integration.
+* Geolocation and interactive maps.
+* Real-time communication using WebSockets through Socket.IO.
+* Payment and email service integration.
+* Role-based application workflows.
+* Deployment and environment configuration.
+
+These capabilities make ShopNest a useful project for demonstrating full-stack development skills in internship and entry-level software engineering applications.
+
+---
 
 ## 👨‍💻 Author
 
 **Samarth Pandey**
 
-- GitHub: [@samarthpandey158](https://github.com/samarthpandey158)
-- Project repository: [groceryFolder](https://github.com/samarthpandey158/groceryFolder)
+Computer Science & Engineering Student | Full-Stack Developer
+
+* **GitHub:** [@samarthpandey158](https://github.com/samarthpandey158)
+* **Project Repository:** [groceryFolder](https://github.com/samarthpandey158/groceryFolder)
+* **Live Demo:** [ShopNest](https://shopnest-india.vercel.app)
 
 ---
 
 <div align="center">
-  <sub>ShopNest — Full-stack grocery shopping and delivery application.</sub>
+
+### ⭐ If you find ShopNest interesting, consider starring the repository!
+
+**Built with ❤️ and modern web technologies.**
+
 </div>
